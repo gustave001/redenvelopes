@@ -13,7 +13,7 @@ import kotlinx.android.synthetic.main.include_title.*
 
 class GithubIssuesActivity : PermissionBaseActivity() {
 
-    private val address = "https://github.com/gemgao/redenvelopes/blob/master/README.md"
+    private val address = "https://github.com/gustave001/redenvelopes/blob/master/README.md"
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
