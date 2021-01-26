@@ -167,6 +167,7 @@ class WechatService : AccessibilityService() {
      */
     private fun grabRedEnvelope() {
         Log.d(TAG, "grabRedEnvelope")
+        val ifGrabSelf = RedEnvelopePreferences.wechatControl.ifGrabSelf
 
         val envelopes = AccessibilityServiceUtils.getElementsById(
             RED_ENVELOPE_ID,

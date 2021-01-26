@@ -63,6 +63,7 @@ class WechatEnvelopeActivity : BaseActivity(), SeekBar.OnSeekBarChangeListener {
         mCbWechatControl = findViewById(R.id.cb_qq_control)
         mCbWechatNotificationControl = findViewById(R.id.cb_wechat_notification_control)
         mCbWechatChatControl = findViewById(R.id.cb_wechat_chat_control)
+        mCbIfGrabSelf = findViewById(R.id.cb_if_grab_self)
         mTvWechatPutong = findViewById(R.id.tv_qq_putong)
         mSbWechatPutong = findViewById(R.id.sb_qq_putong)
 
@@ -79,6 +80,10 @@ class WechatEnvelopeActivity : BaseActivity(), SeekBar.OnSeekBarChangeListener {
         }
         mCbWechatChatControl.setOnCheckedChangeListener { buttonView, isChecked ->
             wechatControlVO.isMonitorChat = isChecked
+            RedEnvelopePreferences.wechatControl = wechatControlVO
+        }
+        mCbIfGrabSelf.setOnCheckedChangeListener { buttonView, isChecked ->
+            wechatControlVO.ifGrabSelf = isChecked
             RedEnvelopePreferences.wechatControl = wechatControlVO
         }
 
@@ -99,6 +104,8 @@ class WechatEnvelopeActivity : BaseActivity(), SeekBar.OnSeekBarChangeListener {
         mCbWechatNotificationControl.isChecked =
             RedEnvelopePreferences.wechatControl.isMonitorNotification
         mCbWechatChatControl.isChecked = RedEnvelopePreferences.wechatControl.isMonitorChat
+        mCbIfGrabSelf.isChecked = RedEnvelopePreferences.wechatControl.ifGrabSelf
+
 
         wechatControlVO = RedEnvelopePreferences.wechatControl
         t_putong = wechatControlVO.delayOpenTime
